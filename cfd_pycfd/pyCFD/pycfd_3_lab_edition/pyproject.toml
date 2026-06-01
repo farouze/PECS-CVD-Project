@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycfd"
+version = "3.0.0"
+description = "pyCFD Lab Edition: Same-Encoder Complementary Feature Domain Discovery for biomedical and multimodal learning"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Tim Oladunni" }]
+license = { text = "MIT" }
+keywords = [
+  "complementary-feature-domain",
+  "multimodal-learning",
+  "biomedical-signals",
+  "ECG",
+  "PPG",
+  "domain-fusion",
+  "same-encoder"
+]
+dependencies = [
+  "numpy>=1.23,<2.1",
+  "pandas>=1.5,<3.0",
+  "scipy>=1.9",
+  "scikit-learn>=1.1",
+  "matplotlib>=3.6"
+]
+
+[project.optional-dependencies]
+deep = ["tensorflow>=2.12"]
+wfdb = ["wfdb>=4.1"]
+dev = ["pytest>=7", "build", "twine"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pycfd*"]
